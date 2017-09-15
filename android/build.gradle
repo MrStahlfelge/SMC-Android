@@ -16,7 +16,7 @@ android {
     buildToolsVersion '25.0.2'
     compileSdkVersion 25
     defaultConfig {
-        applicationId "rs.pedjaapps.smc.android"
+        applicationId "de.golfgl.smc.android"
         versionCode 20160527
         versionName "1.0.1"
         minSdkVersion 15
