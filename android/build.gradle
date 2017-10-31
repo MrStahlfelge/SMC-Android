@@ -17,8 +17,8 @@ android {
     compileSdkVersion 25
     defaultConfig {
         applicationId "de.golfgl.smc.android"
-        versionCode 20171003
-        versionName "1.1.0"
+        versionCode 20171101
+        versionName "2.1.0"
         minSdkVersion 15
         targetSdkVersion 25
     }
