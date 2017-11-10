@@ -27,6 +27,7 @@ public class MaryoGame extends Game
 	public static final boolean GAME_DEVMODE = true;
 
 	public MyControllerMapping controllerMappings;
+	public String isRunningOn = "";
 
 	public Assets assets;
 	private Event event;
