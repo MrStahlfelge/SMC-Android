@@ -64,7 +64,7 @@ public class MaryoGame extends Game implements IGameServiceListener {
 		if (gpgsClient != null) {
 			gpgsClient.setListener(this);
 			gpgsClient.resumeSession();
-            GameSave.gpgsClient = gpgsClient;
+            GameSave.cloudSaveClient = gpgsClient;
 		}
 
 		setScreen(new LoadingScreen(new MainMenuScreen(this), false));
