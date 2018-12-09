@@ -1,26 +1,37 @@
-![smc logo](https://raw.githubusercontent.com/pedja1/SMC-Android/master/android/assets/data/game/logo/smc_big_1.png)  
-Secret Maryo Chronicles for Android
-===========
-[![Build Status](http://teamcity.android-forever.com/teamcity/app/rest/builds/buildType:(id:Pedjaapps_Smc_Build)/statusIcon)](http://teamcity.android-forever.com/teamcity/project.html?projectId=Pedjaapps_Smc&tab=projectOverview)
+## Secret Chronicles Classic Platformer
+A [libgdx](https://github.com/libgdx/libgdx) example project.  
 
-This is an Android port of PC platformer game [Secret Maryo Chronicles](https://github.com/FluXy/SMC)
+![libgdx logo](https://raw.githubusercontent.com/pedja1/SMC-Android/dd75f1aeadd8fdb8bf0511a9d99486be981632c9/data/data/game/logo/libgdx.png)
 
-No code is used from original game, only graphic/audio assets and levels
+![Main screen](https://raw.githubusercontent.com/MrStahlfelge/SMC-libgdx/master/_market/Screenshot_2017-11-01-19-36-52.png)
 
-Download Here - Android
-[Secret Maryo Chronicles - Google Play](https://play.google.com/store/apps/details?id=rs.pedjaapps.smc.android)
+Massively bugfixed and extended version of pedja's Secret Maryo Chronicles Clone.
+(In other words: This is a fork of a [clone](https://github.com/pedja1/SMC-Android)
+of a [clone](https://github.com/FluXy/SMC).)
 
-## SCREENSHOTS
-![smc screenshot 1](https://raw.githubusercontent.com/pedja1/SMC-Android/master/_market/Screenshot_2015-09-21-18-52-17.jpg)  
-![smc screenshot 2](https://raw.githubusercontent.com/pedja1/SMC-Android/master/_market/Screenshot_2015-09-21-18-52-27.jpg)  
-![smc screenshot 3](https://raw.githubusercontent.com/pedja1/SMC-Android/master/_market/Screenshot_2015-09-21-18-53-03.jpg)  
+Although this is a great project and example for a full libGDX game, he has unfortunately given 
+up on the project for some reason without finishing it. So I've taken over some work:
 
-##SHORT VIDEO
-[![SMC GAMEPLAY VIDEO](http://img.youtube.com/vi/DinBBcydx3g/0.jpg)](https://youtu.be/DinBBcydx3g)
+* All level bugs fixed until level 13 Eatomania
+* Game controller support (using [gdx-controllerutils](https://github.com/MrStahlfelge/gdx-controllerutils))
+* Works on GWT/HTML5 backend
+* Resizable
+* Game service support (using [gdx-gamesvcs](https://github.com/MrStahlfelge/gdx-gamesvcs))
+* [FireTV support](https://medium.com/@bschulte19e/releasing-a-game-for-amazon-firetv-23dcb68145da), works with TV remote only
 
-## ENGINE
-Engine used for this port is **[libgdx](https://github.com/libgdx/libgdx)**  
-![smc screenshot 1](https://raw.githubusercontent.com/pedja1/SMC-Android/dd75f1aeadd8fdb8bf0511a9d99486be981632c9/data/data/game/logo/libgdx.png)
+Please excuse German commit messages, I did not plan to make this public in the first place.
 
-## CONTRIBUTION
-If you want to hellp with something please dont hesistate to make a pull request.
+Please note: This is not a clean demonstration project, but a grown learning project. Not everything 
+is done in a perfect way.
+
+## Play it
+
+[Play HTML5 version or download APK on GameJolt](https://gamejolt.com/games/scc/290963)
+
+[Play on your FireTV](http://www.amazon.com/dp/B077CCSQC5)
+
+Unfortunately, I was not allowed to put my version on Google Play. Review team does not know about GPL3. 
+
+## License
+
+Please respect the GPL3 license of this repository, pedja's original and the original Secret Maryo Chronicles project.
