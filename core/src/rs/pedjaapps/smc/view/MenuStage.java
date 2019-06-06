@@ -35,31 +35,31 @@ public class MenuStage extends ControllerMenuStage {
     }
 
     @Override
-    protected void onFocusGained(Actor focussedActor) {
+    protected void onFocusGained(Actor focussedActor, Actor oldFocused) {
         oldColor = new Color(focussedActor.getColor());
         fadeAction = Actions.forever(Actions.sequence(Actions.color(emphColor, .5f, Interpolation.circle),
                 Actions.color(oldColor, .5f, Interpolation.fade), Actions.delay(1f)));
         focussedActor.addAction(fadeAction);
         //focussedActor.setColor(emphColor);
-        super.onFocusGained(focussedActor);
+        super.onFocusGained(focussedActor, oldFocused);
     }
 
     @Override
-    protected void onFocusLost(Actor focussedActor) {
+    protected void onFocusLost(Actor focussedActor, Actor newFocused) {
         focussedActor.removeAction(fadeAction);
         fadeAction = null;
         focussedActor.setColor(oldColor);
-        super.onFocusLost(focussedActor);
+        super.onFocusLost(focussedActor, newFocused);
     }
 
     @Override
-    protected boolean fireEventOnActor(Actor actor, InputEvent.Type type) {
+    protected boolean fireEventOnActor(Actor actor, InputEvent.Type type, int pointer, Actor related) {
         // Die ScrollPane mag touchDown und touchUp Fakes nicht und soll die auch nicht kriegen
         if ((type == InputEvent.Type.touchDown || type == InputEvent.Type.touchUp)
                 && actor != null && actor instanceof ScrollPane)
             return false;
 
-        return super.fireEventOnActor(actor, type);
+        return super.fireEventOnActor(actor, type, pointer, related);
     }
 
     @Override

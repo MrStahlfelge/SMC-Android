@@ -49,7 +49,7 @@ public class LevelButton extends Button {
 
         if (getStage() instanceof MenuStage && scrollPane != null)
             // prüfen ob der Fokus auf der ScrollPane liegt
-            hasFocus = (((MenuStage) getStage()).getFocussedActor() == scrollPane);
+            hasFocus = (((MenuStage) getStage()).getFocusedActor() == scrollPane);
         else
             //stimmt nicht ganz, aber Levelbutton ist eh immer in ScrollPane
             hasFocus = true;

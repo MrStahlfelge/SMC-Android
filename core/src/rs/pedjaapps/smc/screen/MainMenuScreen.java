@@ -242,7 +242,7 @@ public class MainMenuScreen extends AbstractScreen {
         initStartMenu();
 
         choseLevelView.setSize(stage.getWidth(), stage.getHeight());
-        choseLevelView.inflateWidgets(dynAtlas, stage.getFocussableActors());
+        choseLevelView.inflateWidgets(dynAtlas, stage.getFocusableActors());
 
         maryo = new Image(dynAtlas.findRegion("maryo_" + GameSave.getPersistentMaryoState().toString()
                 + "_" + GameObject.TKey.stand_right.toString()));
@@ -306,10 +306,10 @@ public class MainMenuScreen extends AbstractScreen {
         };
 
         startMenu.addActor(playButton);
-        stage.addFocussableActor(playButton);
+        stage.addFocusableActor(playButton);
         playButton.setPosition(startMenu.getWidth() / 2, startMenu.getHeight() / 2 - 50, Align.center);
         startMenu.addActor(soundButton);
-        stage.addFocussableActor(soundButton);
+        stage.addFocusableActor(soundButton);
 
         Image imGameLogo = createLogoImage(game);
         imGameLogo.setPosition(startMenu.getWidth() / 2, (startMenu.getHeight() + playButton.getY() + playButton
@@ -330,7 +330,7 @@ public class MainMenuScreen extends AbstractScreen {
             }
         });
         startMenu.addActor(gameVersion);
-        stage.addFocussableActor(gameVersion);
+        stage.addFocusableActor(gameVersion);
 
         exitButton = new ColorableTextButton(FontAwesome.CIRCLE_CROSS, skin, Assets.BUTTON_FA_FRAMELESS);
         exitButton.setPosition(10, startMenu.getHeight() - 10, Align.topLeft);
@@ -342,7 +342,7 @@ public class MainMenuScreen extends AbstractScreen {
             }
         });
         startMenu.addActor(exitButton);
-        stage.addFocussableActor(exitButton);
+        stage.addFocusableActor(exitButton);
 
         TextButton gamePadSettings = new ColorableTextButton(FontAwesome.DEVICE_GAMEPAD, skin, Assets.BUTTON_FA);
         gamePadSettings.setPosition(startMenu.getWidth() - 10, 10, Align.bottomRight);
@@ -353,7 +353,7 @@ public class MainMenuScreen extends AbstractScreen {
             }
         });
         startMenu.addActor(gamePadSettings);
-        stage.addFocussableActor(gamePadSettings);
+        stage.addFocusableActor(gamePadSettings);
 
         soundButton.setPosition(gamePadSettings.getX(), gamePadSettings.getY() + gamePadSettings.getHeight() + 20);
 
@@ -378,14 +378,14 @@ public class MainMenuScreen extends AbstractScreen {
             });
             gpgsLogin.setPosition(10, 10, Align.bottomLeft);
             startMenu.addActor(gpgsLogin);
-            stage.addFocussableActor(gpgsLogin);
+            stage.addFocusableActor(gpgsLogin);
         }
 
         focusOnMain();
     }
 
     private void focusOnMain() {
-        stage.setFocussedActor(playButton);
+        stage.setFocusedActor(playButton);
         stage.setEscapeActor(exitButton);
     }
 

@@ -115,10 +115,7 @@ public class GamepadSettingsDialog extends ControllerMenuDialog {
         contentTable.add(controllerList);
 
         contentTable.row().padTop(30);
-        Label hint = new Label("If a connected controller does not show up,\ntry pressing a button.\n" +
-                (Gdx.app.getType() == Application.ApplicationType.WebGL && runsOnChrome ?
-                        "If you face problems with controllers on Chrome, press a button, reload the game, try again.\n" +
-                                "If that does not help, try Mozilla Firefox." : ""),
+        Label hint = new Label("If a connected controller does not show up,\ntry pressing a button.",
                 getSkin(), Assets.LABEL_SIMPLE25);
         hint.setFontScale(.8f);
         hint.setWrap(true);

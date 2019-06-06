@@ -156,10 +156,6 @@ public class GameScreen extends AbstractScreen {
 
     public void setDebug(boolean debug) {
         this.debug = debug;
-        if (debug)
-            GLProfiler.enable();
-        else
-            GLProfiler.disable();
     }
 
     @Override
@@ -258,7 +254,6 @@ public class GameScreen extends AbstractScreen {
                 cameraEditModeTranslate.y -= 0.2f;
             }
         }
-        if (debug) GLProfiler.reset();
     }
 
     public void endLevel() {
@@ -432,8 +427,6 @@ public class GameScreen extends AbstractScreen {
                 + "\n" + "World Camera: x=" + cam.position.x + ", y=" + cam.position.y
                 + "\n" + "JavaHeap: " + Gdx.app.getJavaHeap() / 1000000 + "MB"
                 + "\n" + "NativeHeap: " + Gdx.app.getNativeHeap() / 1000000 + "MB"
-                + "\n" + "OGL Draw Calls: " + GLProfiler.drawCalls
-                + "\n" + "OGL TextureBindings: " + GLProfiler.textureBindings
                 + "\n" + "Screen w=" + width + "h=" + height
                 + "\n" + "FPS: " + Gdx.graphics.getFramesPerSecond();
     }
@@ -496,7 +489,6 @@ public class GameScreen extends AbstractScreen {
         if (globalEffect != null) {
             globalEffect.dispose();
         }
-        if (debug) GLProfiler.disable();
     }
 
     @Override

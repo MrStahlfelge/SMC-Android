@@ -270,7 +270,7 @@ public class HUD {
         });
         cancelButton.setPosition(10, stage.getHeight() - 10, Align.topLeft);
         stage.addActor(cancelButton);
-        stage.addFocussableActor(cancelButton);
+        stage.addFocusableActor(cancelButton);
 
         playButton = new ColorableTextButton("RESUME", skin, Assets.BUTTON_BORDER);
         playButton.getLabel().setFontScale(.7f);
@@ -283,7 +283,7 @@ public class HUD {
         });
         playButton.setPosition(stage.getWidth() / 2, stage.getHeight() / 4, Align.center);
         stage.addActor(playButton);
-        stage.addFocussableActor(playButton);
+        stage.addFocusableActor(playButton);
 
         gamescreenlevel = Level.getLevel(gameScreen.getMenuLevelname());
         levelNamePaused = getScaledLabel("LEVEL " + gamescreenlevel.number + " PAUSED", .8f);
@@ -306,7 +306,7 @@ public class HUD {
             }
         });
         stage.addActor(gamePadSettings);
-        stage.addFocussableActor(gamePadSettings);
+        stage.addFocusableActor(gamePadSettings);
 
         musicButton = new MusicButton(skin, world.screen.game.assets.manager.get(Assets.SOUND_AUDIO_ON, Sound.class)) {
             @Override
@@ -316,7 +316,7 @@ public class HUD {
         };
         musicButton.setPosition(gamePadSettings.getX() - 10, 10, Align.bottomRight);
         stage.addActor(musicButton);
-        stage.addFocussableActor(musicButton);
+        stage.addFocusableActor(musicButton);
 
         imItemBox = new Image(skin, "game_itembox");
         imItemBox.setPosition(MaryoGame.NATIVE_WIDTH / 2 - ibSize, MaryoGame.NATIVE_HEIGHT - ibSize - ibSize / 5);
@@ -465,7 +465,7 @@ public class HUD {
             popupBox.hide();
 
         if (isPaused) {
-            stage.setFocussedActor(playButton);
+            stage.setFocusedActor(playButton);
             stage.setEscapeActor(cancelButton);
         }
     }
@@ -636,7 +636,7 @@ public class HUD {
         popupBox.show(stage, Actions.delay(.5f, Actions.moveToAligned(stage.getWidth() / 2, stage.getHeight() / 2,
                 Align.center, .5f, Interpolation.circle)));
 
-        stage.setFocussedActor(newDefaultActor);
+        stage.setFocusedActor(newDefaultActor);
         stage.setEscapeActor(newEscapeActor);
     }
 

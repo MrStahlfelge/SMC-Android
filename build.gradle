@@ -16,10 +16,10 @@ allprojects {
     version = '1.0'
     ext {
         appName = 'SMC-Android'
-        gdxVersion = '1.9.6'
+        gdxVersion = '1.9.8'
         roboVMVersion = '1.14.0'
-        gamesvcsVersion = '0.2.1'
-        cuVersion = '0.1.0'
+        gamesvcsVersion = '1.0.0'
+        cuVersion = '0.2.0-SNAPSHOT'
     }
 
     repositories {

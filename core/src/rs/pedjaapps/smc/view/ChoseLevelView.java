@@ -316,7 +316,7 @@ public class ChoseLevelView extends Group {
     public void onShow(MenuStage stage) {
         //statusgroup.addAction(Actions.sequence(Actions.alpha(0),
         //        Actions.delay(MainMenuScreen.DURATION_TRANSITION), Actions.fadeIn(1f)));
-        stage.setFocussedActor(levelScrollPane);
+        stage.setFocusedActor(levelScrollPane);
         if (currentSelectedButton != null)
             currentSelectedButton.scrollTo();
         stage.setEscapeActor(backButton);
