@@ -30,9 +30,11 @@ public class GamepadSettingsDialog extends ControllerMenuDialog {
 
     private final ColorableTextButton closeButton;
     private Button refreshButton;
-    private RefreshListener controllerListener;
     private ControllerMappings mappings;
     private boolean runsOnChrome;
+    private int connectedControllersOnLastCheck;
+    private float timeSinceLastControllerCheck;
+
 
     public GamepadSettingsDialog(Skin skin, ControllerMappings mappings, String isRunningOn) {
         super("", skin, Assets.WINDOW_SMALL);
@@ -54,9 +56,20 @@ public class GamepadSettingsDialog extends ControllerMenuDialog {
         getButtonTable().add(refreshButton);
         buttonsToAdd.add(refreshButton);
 
-        controllerListener = new RefreshListener();
-
         runsOnChrome = (isRunningOn != null && isRunningOn.toLowerCase().contains("chrome/"));
+    }
+
+    @Override
+    public void act(float delta) {
+        super.act(delta);
+
+        timeSinceLastControllerCheck = timeSinceLastControllerCheck + delta;
+
+        if (timeSinceLastControllerCheck > .2f) {
+            if (connectedControllersOnLastCheck != Controllers.getControllers().size)
+                refreshShownControllers();
+            timeSinceLastControllerCheck = 0;
+        }
     }
 
     private void refreshShownControllers() {
@@ -71,6 +84,7 @@ public class GamepadSettingsDialog extends ControllerMenuDialog {
         contentTable.clear();
 
         Array<Controller> controllers = Controllers.getControllers();
+        connectedControllersOnLastCheck = controllers.size;
 
         contentTable.add(new Label(controllers.size == 0 ? "No controllers found." : "Controllers found:",
                 getSkin(), Assets.LABEL_SIMPLE25)).padBottom(30);
@@ -95,7 +109,7 @@ public class GamepadSettingsDialog extends ControllerMenuDialog {
             controllerList.add(configureButton);
             buttonsToAdd.add(configureButton);
             if (getStage() != null)
-                ((MenuStage) getStage()).addFocussableActor(configureButton);
+                ((MenuStage) getStage()).addFocusableActor(configureButton);
         }
         contentTable.row();
         contentTable.add(controllerList);
@@ -128,32 +142,6 @@ public class GamepadSettingsDialog extends ControllerMenuDialog {
         if (stage instanceof MenuStage)
             ((MenuStage) stage).setEscapeActor(closeButton);
 
-        Controllers.addListener(controllerListener);
         return this;
-    }
-
-    @Override
-    public void hide(Action action) {
-        // removeListener darf erst im nächsten Call passieren, da es eine Exception gibt wenn diese Aktion
-        // aus einem Controller-Aufruf heraus passiert
-        Gdx.app.postRunnable(new Runnable() {
-            @Override
-            public void run() {
-                Controllers.removeListener(controllerListener);
-            }
-        });
-        super.hide(action);
-    }
-
-    private class RefreshListener extends ControllerAdapter {
-        @Override
-        public void connected(Controller controller) {
-            refreshShownControllers();
-        }
-
-        @Override
-        public void disconnected(Controller controller) {
-            refreshShownControllers();
-        }
     }
 }
