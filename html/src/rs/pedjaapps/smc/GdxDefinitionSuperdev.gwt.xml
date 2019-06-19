@@ -5,12 +5,9 @@
 	<inherits name="com.badlogic.gdx.controllers.controllers-gwt"/>
 	<inherits name="de.golfgl.gdxgamesvcs.gdx_gamesvcs_gwt" />
 
-    <inherits name='MaryoGame' />
-	<entry-point class='rs.pedjaapps.smc.client.HtmlLauncher' />
-	
+	<inherits name='rs.pedjaapps.smc.GdxDefinition' />
+
 	<add-linker name="xsiframe"/>
 	<set-configuration-property name='xsiframe.failIfScriptTag' value='FALSE'/>
 	<set-configuration-property name="devModeRedirectEnabled" value="true"/>
-	
-	<set-configuration-property name="gdx.assetpath" value="../android/assets" />
 </module>
