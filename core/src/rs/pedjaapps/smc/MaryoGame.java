@@ -24,7 +24,7 @@ public class MaryoGame extends Game implements IGameServiceListener {
 	public static final String GAME_VERSION = "2.1.17112";
 	public static final String GAME_STOREURL = "https://play.google.com/store/apps/details?id=de.golfgl.smc.android";
 	public static final String GAME_WEBURL = "https://www.golfgl.de/sccplf/";
-	public static final String GAME_SOURCEURL = "https://www.golfgl.de/sccplf/sccsrc.zip";
+	public static final String GAME_SOURCEURL = "https://github.com/MrStahlfelge/SMC-libgdx";
 	public static final boolean GAME_DEVMODE = true;
 
 	public MyControllerMapping controllerMappings;
