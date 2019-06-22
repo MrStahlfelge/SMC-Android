@@ -36,7 +36,6 @@ public class HtmlLauncher extends GwtApplication {
         Window.enableScrolling(false);
         Window.setMargin("0");
         Window.addResizeHandler(new ResizeListener());
-        cfg.preferFlash = false;
         return cfg;
     }
 
@@ -66,33 +65,13 @@ public class HtmlLauncher extends GwtApplication {
 
     @Override
     public Preloader.PreloaderCallback getPreloaderCallback() {
-        final Panel preloaderPanel = new VerticalPanel();
-        preloaderPanel.setStyleName("gdx-preloader");
-        final Image logo = new Image(GWT.getHostPageBaseURL() + "logo_preload.png");
-        logo.setStyleName("preloadlogo");
-        preloaderPanel.add(logo);
-        final Panel meterPanel = new SimplePanel();
+        return createPreloaderPanel(GWT.getHostPageBaseURL() + "logo_preload.png");
+    }
+
+    @Override
+    protected void adjustMeterPanel(Panel meterPanel, Style meterStyle) {
         meterPanel.setStyleName("gdx-meter");
-        meterPanel.addStyleName("nostripes ");
-        final InlineHTML meter = new InlineHTML();
-        final Style meterStyle = meter.getElement().getStyle();
-        meterStyle.setWidth(0, Style.Unit.PCT);
-        meterPanel.add(meter);
-        preloaderPanel.add(meterPanel);
-        getRootPanel().add(preloaderPanel);
-        return new Preloader.PreloaderCallback() {
-
-            @Override
-            public void error(String file) {
-                System.out.println("error: " + file);
-            }
-
-            @Override
-            public void update(Preloader.PreloaderState state) {
-                meterStyle.setWidth(100f * state.getProgress(), Style.Unit.PCT);
-            }
-
-        };
+	    meterPanel.addStyleName("nostripes");
     }
 
     class ResizeListener implements ResizeHandler {
