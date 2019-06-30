@@ -16,7 +16,7 @@ allprojects {
     version = '1.0'
     ext {
         appName = 'SMC-Android'
-        gdxVersion = '1.9.8'
+        gdxVersion = '1.9.10-SNAPSHOT'
         roboVMVersion = '1.14.0'
         gamesvcsVersion = '1.0.0'
         cuVersion = '0.2.0-SNAPSHOT'

@@ -27,8 +27,10 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
+independent: false
 - Life Offset - 
 active: false
+independent: false
 - X Offset - 
 active: false
 - Y Offset - 
@@ -55,7 +57,7 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
-- Scale - 
+- X Scale - 
 lowMin: 0.05
 lowMax: 0.05
 highMin: 0.15
@@ -67,6 +69,8 @@ scaling1: 0.0
 timelineCount: 2
 timeline0: 0.0
 timeline1: 1.0
+- Y Scale - 
+active: false
 - Velocity - 
 active: true
 lowMin: 0.3
@@ -121,5 +125,6 @@ aligned: false
 additive: false
 behind: false
 premultipliedAlpha: false
-- Image Path -
+spriteMode: single
+- Image Paths -
 star.png
