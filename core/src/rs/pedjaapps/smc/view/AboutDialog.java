@@ -157,7 +157,7 @@ public class AboutDialog extends ScrollDialog {
         sinceLastScroll = Math.max(-1, sinceLastScroll);
         int forceScroll = (scrollDownButton.isPressed() ? 1 : scrollUpButton.isPressed() ? -1 : 0);
 
-        if (forceScroll != 0 && sinceLastScroll <= 0) {
+        if (forceScroll != 0 && sinceLastScroll <= 0 && getStage() != null) {
             getStage().setScrollFocus(scrollPane);
             getStage().scrolled(forceScroll);
             sinceLastScroll=.1f;
