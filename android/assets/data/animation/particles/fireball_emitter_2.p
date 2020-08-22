@@ -29,8 +29,10 @@ scaling1: 1.0
 timelineCount: 2
 timeline0: 0.0
 timeline1: 0.9794521
+independent: false
 - Life Offset - 
 active: false
+independent: false
 - X Offset - 
 active: false
 - Y Offset - 
@@ -57,7 +59,7 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
-- Scale - 
+- X Scale - 
 lowMin: 0.0
 lowMax: 0.0
 highMin: 0.1
@@ -67,6 +69,8 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
+- Y Scale - 
+active: false
 - Velocity - 
 active: true
 lowMin: 0.0
@@ -129,5 +133,6 @@ aligned: false
 additive: true
 behind: false
 premultipliedAlpha: false
-- Image Path -
+spriteMode: single
+- Image Paths -
 /home/pedja/workspace/SMC-Android/data/data_1080/animation/particles/fire_4.png

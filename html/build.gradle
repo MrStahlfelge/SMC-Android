@@ -70,9 +70,9 @@ sourceSets.main.java.srcDirs = [ "src/" ]
 
 dependencies {
     compile project(":core")
-    compile "com.badlogicgames.gdx:gdx-backend-gwt:1.98.1-SNAPSHOT"
+    compile "com.github.MrStahlfelge.gdx-backends:gdx-backend-gwt:1.911.0"
     compile "com.badlogicgames.gdx:gdx:$gdxVersion:sources"
-    compile "com.badlogicgames.gdx:gdx-backend-gwt:$gdxVersion:sources"
+    compile "com.github.MrStahlfelge.gdx-backends:gdx-backend-gwt:1.911.0:sources"
     compile "com.badlogicgames.gdx:gdx-controllers:$gdxVersion:sources"
     compile "de.golfgl.gdxcontrollerutils:gdx-controllers-gwt:$cuVersion"
     compile "de.golfgl.gdxcontrollerutils:gdx-controllers-gwt:$cuVersion:sources"
