@@ -104,16 +104,6 @@ public class GamepadMappingDialog extends ControllerMenuDialog {
             timeSinceLastRecord = 0;
             ControllerMappings.RecordResult recordResult = mappings.recordMapping(controller, inputToRecord);
 
-            if (MaryoGame.GAME_DEVMODE) {
-                int pressedButton = ControllerMappings.findPressedButton(controller);
-                buttonLabel.setText(pressedButton >= 0 ? "B" + String.valueOf(pressedButton) : "");
-                int movedAxis = ControllerMappings.findHighAxisValue(controller, mappings.analogToDigitalTreshold,
-                        mappings.maxAcceptedAnalogValue);
-                axisLabel.setText(movedAxis >= 0 ? "A" + String.valueOf(movedAxis) : "");
-                if (controller.getPov(0) != PovDirection.center)
-                    axisLabel.setText("P0");
-            }
-
             switch (recordResult) {
                 case need_second_button:
                     currentStep++;

@@ -9,6 +9,7 @@
 	<entry-point class='rs.pedjaapps.smc.client.HtmlLauncher' />
 
 	<set-configuration-property name="gdx.assetpath" value="../android/assets" />
+    <set-configuration-property name="gdx.assetfilterclass" value="rs.pedjaapps.smc.AssetFilter"/>
 	<set-property name="user.agent" value="gecko1_8, safari"/>
 	<set-configuration-property name='xsiframe.failIfScriptTag' value='FALSE'/>
 </module>

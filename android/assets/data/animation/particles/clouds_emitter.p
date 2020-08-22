@@ -31,8 +31,10 @@ scaling1: 1.0
 timelineCount: 2
 timeline0: 0.0
 timeline1: 1.0
+independent: false
 - Life Offset - 
 active: false
+independent: false
 - X Offset - 
 active: false
 - Y Offset - 
@@ -59,7 +61,7 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
-- Scale - 
+- X Scale - 
 lowMin: 0.0
 lowMax: 0.0
 highMin: 0.5
@@ -69,6 +71,8 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
+- Y Scale - 
+active: false
 - Velocity - 
 active: true
 lowMin: 0.02
@@ -117,7 +121,7 @@ scaling2: 0.75
 scaling3: 0.0
 timelineCount: 4
 timeline0: 0.0
-timeline1: 0.0010
+timeline1: 0.001
 timeline2: 0.8
 timeline3: 1.0
 - Options - 
@@ -126,7 +130,9 @@ continuous: true
 aligned: false
 additive: false
 behind: false
-- Image Path -
+premultipliedAlpha: false
+spriteMode: single
+- Image Paths -
 1_middle.png
 
 
@@ -159,8 +165,10 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
+independent: false
 - Life Offset - 
 active: false
+independent: false
 - X Offset - 
 active: false
 - Y Offset - 
@@ -187,7 +195,7 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
-- Scale - 
+- X Scale - 
 lowMin: 0.0
 lowMax: 0.0
 highMin: 0.5
@@ -197,6 +205,8 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
+- Y Scale - 
+active: false
 - Velocity - 
 active: true
 lowMin: 0.02
@@ -245,7 +255,7 @@ scaling2: 0.7368421
 scaling3: 0.01754386
 timelineCount: 4
 timeline0: 0.0
-timeline1: 0.0010
+timeline1: 0.001
 timeline2: 0.79452056
 timeline3: 1.0
 - Options - 
@@ -254,5 +264,7 @@ continuous: true
 aligned: false
 additive: false
 behind: false
-- Image Path -
+premultipliedAlpha: false
+spriteMode: single
+- Image Paths -
 1_middle.png

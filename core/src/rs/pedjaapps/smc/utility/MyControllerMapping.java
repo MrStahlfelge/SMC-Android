@@ -4,6 +4,7 @@ import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
+import com.badlogic.gdx.controllers.Controller;
 import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
 
@@ -63,7 +64,7 @@ public class MyControllerMapping extends ControllerMappings {
     }
 
     @Override
-    public boolean getDefaultMapping(MappedInputs defaultMapping) {
+    public boolean getDefaultMapping(MappedInputs defaultMapping, Controller controller) {
         // see https://developer.android.com/reference/android/view/KeyEvent.html#KEYCODE_BUTTON_A
         boolean onAndroid = Gdx.app.getType() == Application.ApplicationType.Android;
 
